@@ -7,23 +7,23 @@ import preserveDirectives from 'rollup-preserve-directives';
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => {
-    const packages = fs.readdirSync(path.resolve(__dirname, '../../packages'));
+    const packages = fs.readdirSync(path.resolve(__dirname, './packages'));
     const aliases: Record<string, string> = {
         'data-generator-retail': path.resolve(
             __dirname,
-            '../data-generator/src'
+            './data-generator/src'
         ),
     };
     for (const dirName of packages) {
         if (dirName === 'create-react-admin') continue;
         // eslint-disable-next-line prettier/prettier
         const packageJson = await import(
-            path.resolve(__dirname, '../../packages', dirName, 'package.json'),
+            path.resolve(__dirname, './packages', dirName, 'package.json'),
             { assert: { type: 'json' } }
-        );
+            );
         aliases[packageJson.default.name] = path.resolve(
             __dirname,
-            `../../packages/${packageJson.default.name}/src`
+            `./packages/${packageJson.default.name}/src`
         );
     }
 
