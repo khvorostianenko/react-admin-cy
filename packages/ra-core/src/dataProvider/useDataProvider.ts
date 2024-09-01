@@ -119,7 +119,7 @@ export const useDataProvider = <
                                     // do not log AbortErrors
                                     !isAbortError(error)
                                 ) {
-                                    console.error(error);
+                                    // console.error(error);
                                 }
                                 return logoutIfAccessDenied(error).then(
                                     loggedOut => {
