@@ -48,6 +48,7 @@ const Menu = ({ dense = false }: MenuProps) => {
             }}
         >
             <DashboardMenuItem />
+            {/* Menu Edits */}
             <SubMenu
                 handleToggle={() => handleToggle('menuSales')}
                 isOpen={state.menuSales}

@@ -74,9 +74,9 @@ const InvoiceList = () => (
             <ReferenceField source="order_id" reference="orders">
                 <TextField source="reference" />
             </ReferenceField>
-            <NumberField source="total_ex_taxes" />
-            <NumberField source="delivery_fees" />
-            <NumberField source="taxes" />
+            {/*<NumberField source="total_ex_taxes" />*/}
+            {/*<NumberField source="delivery_fees" />*/}
+            {/*<NumberField source="taxes" />*/}
             <NumberField source="total" />
         </DatagridConfigurable>
     </List>
